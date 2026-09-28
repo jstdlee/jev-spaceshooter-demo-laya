@@ -729,7 +729,7 @@ func TestDecisionSendsCompactContextAndExcludesCheckpoint(t *testing.T) {
 
 	wire := f.upstream.calls[0]
 	payload := decode(t, string(wire))
-	if !reflect.DeepEqual(sortedTop(payload), []string{"instructions", "model", "questions", "samples", "state", "steps"}) {
+	if !reflect.DeepEqual(sortedTop(payload), []string{"instructions", "model", "questions", "state"}) {
 		t.Fatalf("payload keys %v", sortedTop(payload))
 	}
 	motion := map[string]string{"hold": "stationary", "right": "turns", "up": "continues", "down": "reverses",

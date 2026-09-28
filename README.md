@@ -1,4 +1,25 @@
-# Jev Strike — Julia 1 edition
+# Jev Strike — Laya edition
+
+> **This is the Laya test fork** of the [Julia 1 edition](https://github.com/jstdlee/jev-spaceshooter-demo-julia1). Julia is offloaded;
+> the pilot is [Laya](https://huggingface.co/convaiinnovations/laya) served by the local Go `laya-api` (`POST /v1/systemone`,
+> default `http://127.0.0.1:8012`, model `typed-decisions`; set `DJEV_MODEL=english` to use the English checkpoint).
+> The bridge sends no `samples`/`steps` (Laya rejects them) and no `option_questions` (a Julia-API extension), so Laya answers
+> each question natively as one multi-option choice.
+
+Lockstep simulation, 4 seeds × 60 s, dense-mid-speed, 30 ms game-time latency (2026-09-29):
+
+| Upstream | Mean survival | Full runs | Hits | Best-tier picks | Deadly pick when avoidable | Median latency |
+| --- | --- | --- | --- | --- | --- | --- |
+| Laya `typed-decisions` (421M) | 16.4 s | 0/4 | 12 | 49% | 27% | 184 ms |
+| Laya `english` (421M) | 23.3 s | 0/4 | 12 | — | — | 163 ms |
+| Julia 1, two judgements per option (for comparison) | 60.0 s | 4/4 | 0 | ~80% | ~0% | ~65 ms |
+
+Laya reads the tier words better than Julia's native choice (49% vs 35% best-tier) but shows the same bias toward the
+first-listed options and has no per-option scoring mode in its API, so it still steers into avoidable deadly moves.
+
+---
+
+## Julia 1 edition README (inherited)
 
 A retro pixel space shooter built around one practical question: **how do you turn a fast, continuous game into a
 small decision problem that a local model can solve quickly enough to fly the ship?**

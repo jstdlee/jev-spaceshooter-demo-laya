@@ -655,25 +655,9 @@ func buildUpstreamPayload(model, promptText string, packed, pathCriteria, bombCr
 		Set("instructions", promptText).
 		Set("state", packed).
 		Set("questions", NewOrderedMap().
-			Set("path", question(pathInstructions, pathCriteria).Set("option_questions", pathOptionQuestions())).
+			Set("path", question(pathInstructions, pathCriteria)).
 			Set("fire", question(fireInstructions, choiceCriteria(FireIDs, FireDescriptions))).
-			Set("bomb", question(bombInstructions, bombCriteria))).
-		Set("samples", 1).
-		Set("steps", 1)
-}
-
-// pathOptionQuestions asks Julia 1 for two judgements of every path label, which the
-// julia-api combines as a weighted sum. "Right answer" picks well among safe moves but
-// ranks bad moves in the wrong order; the outcome score keeps danger ordered, so the
-// pair avoids deadly moves when an escape exists. Weight 3 was tuned offline on
-// recorded states (holdout: 100% deadly avoidance in crises, ~80% best tier overall).
-func pathOptionQuestions() []any {
-	return []any{
-		NewOrderedMap().Set("type", "noul").Set("instructions", "Is this the right answer?").Set("weight", 1),
-		NewOrderedMap().Set("type", "score").Set("instructions", "What happens to the ship?").
-			Set("levels", []any{"the ship is destroyed", "the ship is trapped", "the ship survives with difficulty", "the ship is completely safe"}).
-			Set("weight", 3),
-	}
+			Set("bomb", question(bombInstructions, bombCriteria)))
 }
 
 type answer struct {
