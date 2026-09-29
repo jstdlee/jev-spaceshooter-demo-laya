@@ -32,7 +32,7 @@ move for the model or rescues a bad one.
 It's a fork of [`jev-spaceshooter-demo`](https://github.com/jstdlee/jev-spaceshooter-demo), which ran the same
 game on a self-hosted 26B djev-spark endpoint. That repo stays untouched; this one is tuned for Julia 1.
 
-![Julia 1 flying all four difficulty levels at once (1/3, 1/2, 3/4, 4/4, left to right and top to bottom)](docs/media/julia1/preview-all-difficulties.gif)
+![Julia 1 flying all four difficulty levels at once (1/3, 1/2, 3/4, 4/4, left to right and top to bottom)](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/preview-all-difficulties.gif)
 
 ## Demo videos
 
@@ -41,10 +41,10 @@ sliders to that fraction of their range. Recorded 2026-09-28, one run per level,
 
 | Level | Bullets · enemies · fast bullets · fast speed | Outcome | Video | Screenshot |
 | --- | --- | --- | --- | --- |
-| 1/3 | 3.25× · 2.75× · 35% · 2.3× | died at 57.6 s, score 1,992 | [MP4, 6.8 MB](docs/media/julia1/difficulty-1-3.mp4) | [PNG](docs/media/julia1/difficulty-1-3.png) |
-| 1/2 | 4.5× · 3.5× · 50% · 3.0× | survived 60 s, score 3,260 | [MP4, 7.7 MB](docs/media/julia1/difficulty-1-2.mp4) | [PNG](docs/media/julia1/difficulty-1-2.png) |
-| 3/4 | 6.25× · 4.75× · 75% · 3.9× | died at 41.8 s, score 1,052 | [MP4, 4.6 MB](docs/media/julia1/difficulty-3-4.mp4) | [PNG](docs/media/julia1/difficulty-3-4.png) |
-| 4/4 | 8× · 6× · 100% · 4.8× | died at 32.1 s, score 1,068 | [MP4, 3.5 MB](docs/media/julia1/difficulty-4-4.mp4) | [PNG](docs/media/julia1/difficulty-4-4.png) |
+| 1/3 | 3.25× · 2.75× · 35% · 2.3× | died at 57.6 s, score 1,992 | [MP4, 6.8 MB](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-1-3.mp4) | [PNG](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-1-3.png) |
+| 1/2 | 4.5× · 3.5× · 50% · 3.0× | survived 60 s, score 3,260 | [MP4, 7.7 MB](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-1-2.mp4) | [PNG](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-1-2.png) |
+| 3/4 | 6.25× · 4.75× · 75% · 3.9× | died at 41.8 s, score 1,052 | [MP4, 4.6 MB](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-3-4.mp4) | [PNG](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-3-4.png) |
+| 4/4 | 8× · 6× · 100% · 4.8× | died at 32.1 s, score 1,068 | [MP4, 3.5 MB](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-4-4.mp4) | [PNG](https://github.com/jstdlee/jev-spaceshooter-demo-julia1/raw/main/docs/media/julia1/difficulty-4-4.png) |
 
 These are single runs, not benchmarks: the 1/3 run dying while the 1/2 run survived shows how much one run varies.
 Controlled numbers are under [Results](#results).
